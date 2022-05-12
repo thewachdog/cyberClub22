@@ -1,4 +1,4 @@
-rom django import forms
+from django import forms
 
 class NameForm(forms.Form):
     charValues = forms.CharField(max_length=100)
