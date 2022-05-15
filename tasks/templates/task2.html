@@ -47,27 +47,43 @@
         <h2>
             What was the name of the person who played a major role in it ?
         </h2>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="******* ****** *****">
-            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Encryption Name" data-bs-content="I'm damn sure you heard the name of the encryption."
-            style="background-image: linear-gradient(to bottom , rgb(255, 72, 0), white, rgb(4, 116, 0)); color: black;"
-            >
-                Hint 0
-            </a>
-            <a tabindex="0" class="btn btn-lg btn-light" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Place -> Name" data-bs-content="After decryption, search that name on google so you will find that person's name"
-            style="background-image: linear-gradient(to bottom, rgb(255, 72, 0), rgb(255, 255, 255), rgb(4, 116, 0)); color: black;"    
-            >
-                Hint 1
-            </a>
-            <a tabindex="0" class="btn btn-lg btn-success" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Rank" data-bs-content="Mention his rank along with his name."
-            style="background-image: linear-gradient(to bottom , rgb(255, 72, 0), white, rgb(4, 116, 0)); color: black;"
-            >
-                Hint 2
-            </a>
-            <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
-        </div>
+        <form action="QRMania.html" method="post">
+            <div class="input-group mb-3">
+                <input type="charValues" class="form-control" placeholder="******* ****** *****" id="answer" name="answer">
+                <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Encryption Name" data-bs-content="I'm damn sure you heard the name of the encryption."
+                style="background-image: linear-gradient(to bottom , rgb(255, 72, 0), white, rgb(4, 116, 0)); color: black;"
+                >
+                    Hint 0
+                </a>
+                <a tabindex="0" class="btn btn-lg btn-light" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Place -> Name" data-bs-content="After decryption, search that name on google so you will find that person's name"
+                style="background-image: linear-gradient(to bottom, rgb(255, 72, 0), rgb(255, 255, 255), rgb(4, 116, 0)); color: black;"    
+                >
+                    Hint 1
+                </a>
+                <a tabindex="0" class="btn btn-lg btn-success" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Rank" data-bs-content="Mention his rank along with his name."
+                style="background-image: linear-gradient(to bottom , rgb(255, 72, 0), white, rgb(4, 116, 0)); color: black;"
+                >
+                    Hint 2
+                </a>
+    
+                {% csrf_token %}
+                
+                <button class="btn btn-info" type="submit" id="button-addon2 ansButton">Submit</button>
+            </div>
+        </form>
     </div>
 
+    {% if message != '' %}
+        <script>alert('{{ message }}');</script>
+    {% endif %}
+    <!-- <br><br>
+
+    <p id="main">
+        
+    </p> -->
+
+    <br><br>
+    
     <footer style="background-color: #0f0; color: #000; font-size: 20px; opacity: 0.7;">
         This website is done by 
         <a href="http://instagram.com/thewachdog" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #f00; font-weight: 900;">
@@ -99,5 +115,6 @@
         })
 
     </script>
+    <!-- <script src="{% static 'tasks/task2js.js' %}"></script> -->
 </body>
 </html>

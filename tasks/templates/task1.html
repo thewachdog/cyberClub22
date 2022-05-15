@@ -49,50 +49,51 @@
             <li style="color: rgb(215, 175, 255);">
                 When was the photo taken ?
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                    <input type="text" class="form-control" placeholder="DD/MM/YYYY" id="a1">
                     <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Date" data-bs-content="Hmm... maybe check the properties of the picture ?">Hint</a>
-                    <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-info" type="button" id="answer1" onclick="ans1()">Submit</button>
                 </div>
             </li>
             <li style="color: black;">What was the commercial name of the device in which the photo was taken ?
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="****** ***** ***">
-                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Device" data-bs-content="Search the device name on Internet, ez :/">Hint</a>
+                    <input type="text" class="form-control" placeholder="****** ***** ***" id = "a2">
+                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Device" data-bs-content="Search the device name on Internet, ez :D">Hint</a>
 
-                    <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-info" type="button" id="answer2" onclick="ans2()">Submit</button>
                 </div>
             </li>
             <li style="color: rgb(0, 247, 255);">
                 Name the default Operating System in the device with its version.
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="******* **">
+                    <input type="text" class="form-control" placeholder="******* **" id="a3">
                     <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Software" data-bs-content="You can find this if you have found the previous quesion's answer.">Hint</a>
-                    <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-info" type="button" id="answer3" onclick="ans3()">Submit</button>
                 </div>
             </li>
             <li style="color: rgb(255, 161, 250);">
                 Where was the photo taken ?
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="*************** ****">
+                    <input type="text" class="form-control" placeholder="*************** ****" id="a4">
                     <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Location" data-bs-content="Don't use Google for this task, it sucks :[">Hint</a>
-                    <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-info" type="button" id="answer4" onclick="ans4()">Submit</button>
                 </div>
             </li>
             <li>
                 Around that location there was a place which was famous for shooting movies and commercials. What was the name of that place ?
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="*** **** ****">
+                    <input type="text" class="form-control" placeholder="*** **** ****" id="a5">
                     <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Hotspot" data-bs-content="BIGG BOSS shooting place Xd">Hint</a>
-                    <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-info" type="button" id="answer5" onclick="ans5()">Submit</button>
                 </div>
             </li>
         </ol>
 
-        <button
-        class="btn btn-lg btn-primary"
-        >
-            Proceed 
-        </button>
+        <form action="encoded.html" method="post" id="main">
+            {% csrf_token %}
+        </form>
+        <!-- <p id="main">
+        
+        </p> -->
     </div>
 
     <br><br>
@@ -128,5 +129,6 @@
         })
 
     </script>
+    <script src="{% static 'tasks/task1js.js' %}"></script>
 </body>
 </html>

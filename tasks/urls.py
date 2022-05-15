@@ -5,5 +5,6 @@ from . import views
 urlpatterns = [
 	path('', views.index) ,
 	path('osint.html', views.osint) ,
-	path('encoded.html', views.encoded)
+	path('encoded.html', views.encoded),
+	path('QRMania.html', views.QRMania),
 ]
