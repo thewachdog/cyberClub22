@@ -3,6 +3,13 @@ from django.shortcuts import render
 from django.http import HttpResponse, FileResponse, HttpResponseRedirect
 from .forms import NameForm
 # from django.contrib import messages
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+def handler404(request):
+    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
 
 # Create your views here.
 def index(request):
@@ -13,15 +20,14 @@ def osint(request):
 
 def encoded(request):
 	if request.POST:
-		print(request.POST)
 		return render(request, "task2.html", {})
 	else:
-		return render(request, "congratulations.html", {})
+		return render(request, "404.html", {})
 
 def QRMania(request):
 	if request.POST:
 		val = request.POST['answer']
-		print(val)
+		# print(val)
 		if val.lower() == 'captain vikram batra':
 			return render(request, "task3.html", {})
 		else:
@@ -29,4 +35,14 @@ def QRMania(request):
 			message = {'message' : 'Wrong answer, Try again.'}
 			return render(request, 'task2.html', message)
 	else:
-		return render(request, "congratulations.html", {})
+		return render(request, "404.html", {})
+
+
+def sample1(request):
+	return render(request, 'sample1.html', {})
+
+def sample2(request):
+	return render(request, 'sample2.html', {})
+
+def sample3(request):
+	return render(request, 'sample3.html', {})

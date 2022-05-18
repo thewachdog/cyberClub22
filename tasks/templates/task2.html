@@ -10,6 +10,7 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <video autoplay muted loop class="bgVideo">
@@ -29,7 +30,7 @@
 
     <br><br>
 
-    <h3 style="color: mediumvioletred;">
+    <h3 style="color: mediumvioletred; background-color: yellow;">
         This audio was captured when they talked to a victim over phone. <br>
         So your task is to decrypt the audio and find the person's name whom are they talking about.
     </h3>
@@ -37,7 +38,6 @@
     <br><br>
 
     <audio controls>
-        <i class="fa fa-audio-description" aria-hidden="true">hello</i>
         <source src="{% static 'tasks/media/RAW.wav' %}" type="audio/wav">
     </audio>
 
@@ -73,7 +73,7 @@
         </form>
     </div>
 
-    {% if message != '' %}
+    {% if message %}
         <script>alert('{{ message }}');</script>
     {% endif %}
     <!-- <br><br>
