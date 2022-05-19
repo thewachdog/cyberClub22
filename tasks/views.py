@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, FileResponse, HttpResponseRedirect
 from .forms import NameForm
 # from django.contrib import messages
-from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 def handler404(request):
