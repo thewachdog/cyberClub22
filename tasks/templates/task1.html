@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSINT | Cyber Club 2022</title>
+    <title>Cyber Club - 2022</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300&display=swap" rel="stylesheet"> 
+
 </head>
 <body>
     <video autoplay muted loop class="bgVideo">
@@ -21,84 +22,60 @@
             <h1 class="animate-charcter">Sri Sairam Institute of Technology</h1>
         </div>
     </div>
-    <h1>
-        <u>
-            OSINT
-        </u>
+
+    <h1 style="color: fuchsia;">
+        <u>Eazy Peazy</u>
     </h1>
-    <h3 style="color: magenta;">
-        The attackers have accidentally left an image out in the public. Use this information to dig deeper about them !!!
-    </h3>
-    <img src="{% static 'tasks/media/IMG_20220424_180614.jpg' %}" alt="" style="max-width: 35%;">
+    <div class="container" style="background-color: rgb(202, 146, 181); border-radius: 10px; opacity: 0.85; font-weight: bolder;">
+        <h3>
+            <span style="color: rgb(153, 255, 0);">
+                In this task a number (either binary or hex values) is hidden in each of the website given below (total 3 binary numbers hidden in 3 websites).
+            </span>
+            <br>
+            <span style="color: rgb(0, 225, 255);">
+                Your task is to find all the values, convert it to corresponding ASCII values and rearrange it.
+            </span>
+            <br>
+            <span style="color: yellow;">
+                [NOTE: the answer must be in corresponding case , if the character is in uppercase, you MUST submit the value in uppercase, etc]
+            </span>
 
-    <br><br>
+            <ul style="color: rgb(255, 34, 34); font-weight: 1000%;">
+                <li>
+                    For letter 1: 
+                    <a href="sample1.html">
+                        D
+                    </a>
+                </li>
+                <li>
+                    For letter 2:
+                    <a href="sample2.html">
+                        0
+                    </a>
+                </li>
+                <li>
+                    For letter 3:
+                    <a href="sample3.html">
+                        t
+                    </a>
+                </li>
+            </ul>
 
-    <div class="container" 
-    style="background-color: teal; 
-    opacity: 0.9; 
-    border: 10px outset hotpink; 
-    border-radius: 10px;
-    font-size: 20px;
-    text-align: center;">
-        <span style="font-size: 25px; color: orange; text-align: center;">
-            Find answers for these questions so that you can proceed in this event
-        </span>
-
-        <br><br>
-
-        <ol  style="text-align: left;">
-            <li style="color: rgb(215, 175, 255);">
-                When was the photo taken ?
+            <form action="QRMania.html" method="post">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="DD/MM/YYYY" id="a1">
-                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Date" data-bs-content="Hmm... maybe check the properties of the picture ?">Hint</a>
-                    <button class="btn btn-info" type="button" id="answer1" onclick="ans1()">Submit</button>
-                </div>
-            </li>
-            <li style="color: black;">What was the commercial name of the device in which the photo was taken ?
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="****** ***** ***" id = "a2">
-                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Device" data-bs-content="Idula onnum illa keezha potudu XD">Hint</a>
-
-                    <button class="btn btn-info" type="button" id="answer2" onclick="ans2()">Submit</button>
-                </div>
-            </li>
-            <li style="color: rgb(0, 247, 255);">
-                Name the default Operating System in the device with its version.
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="******* **" id="a3">
-                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Software" data-bs-content="You can find this if you have found the previous quesion's answer.">Hint</a>
-                    <button class="btn btn-info" type="button" id="answer3" onclick="ans3()">Submit</button>
-                </div>
-            </li>
-            <li style="color: rgb(255, 161, 250);">
-                Where was the photo taken ?
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="*************** ****" id="a4">
-                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Location" data-bs-content="Are you sure you can only search text on the Internet">Hint</a>
-                    <button class="btn btn-info" type="button" id="answer4" onclick="ans4()">Submit</button>
-                </div>
-            </li>
-            <li>
-                Around that location there was a place which was well known for shooting movies and commercials. What was the place ?
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="*** **** ****" id="a5">
-                    <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Hotspot" data-bs-content="BIGG BOSS shooting place :D">Hint</a>
-                    <button class="btn btn-info" type="button" id="answer5" onclick="ans5()">Submit</button>
-                </div>
-            </li>
-        </ol>
-
-        <form action="encoded.html" method="post" id="main">
-            {% csrf_token %}
-        </form>
-        <!-- <p id="main">
+                    <input type="charValues" class="form-control" placeholder="***" id="answer" name="answer">
         
-        </p> -->
+                    {% csrf_token %}
+                    
+                    <button class="btn btn-primary" type="submit" id="button-addon2 ansButton">Submit</button>
+                </div>
+            </form>
+        </h3>
+        {% if message %}
+            <script>alert('{{ message }}');</script>
+        {% endif %}
     </div>
-
-    <br><br>
-
+    
     <footer style="background-color: #0f0; color: #000; font-size: 20px; opacity: 0.7;">
         This website is done by 
         <a href="http://instagram.com/thewachdog" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #f00; font-weight: 900;">
@@ -111,9 +88,8 @@
     </footer>
 
 
-    <!-- JavaScript Bundle with Popper -->
+<!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
     <script>
         // for popover
         var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -130,6 +106,4 @@
         })
 
     </script>
-    <script src="{% static 'tasks/task1js.js' %}"></script>
-</body>
 </html>
