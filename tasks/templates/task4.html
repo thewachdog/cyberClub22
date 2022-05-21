@@ -72,7 +72,7 @@
                 </div>
             </li>
             <li style="color: rgb(255, 161, 250);">
-                Where was the photo taken ?
+                Name of the lake in which the photo was taken.
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="*************** ****" id="a4">
                     <a tabindex="0" class="btn btn-lg btn-warning" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Location" data-bs-content="Are you sure you can only search text on the Internet">Hint</a>
@@ -89,12 +89,12 @@
             </li>
         </ol>
 
-        <form action="encoded.html" method="post" id="main">
-            {% csrf_token %}
+        <form action="congratulations.html" method="post">
+            <p id="main">
+                {% csrf_token %}
+            </p>
         </form>
-        <!-- <p id="main">
-        
-        </p> -->
+
     </div>
 
     <br><br>
@@ -130,6 +130,6 @@
         })
 
     </script>
-    <script src="{% static 'tasks/task1js.js' %}"></script>
+    <script src="{% static 'tasks/task4js.js' %}"></script>
 </body>
 </html>

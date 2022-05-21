@@ -206,3 +206,7 @@ https://codepen.io/Ahrengot/pen/DBjKOW
   bottom: 0;
   z-index: -1;
 }
+
+td{
+  padding: 10px;
+}

@@ -5,46 +5,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Club - 2022</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300&display=swap" rel="stylesheet"> 
 
 </head>
 <body>
     <video autoplay muted loop class="bgVideo">
-        <source src="media/background.mp4" type="video/mp4">
+        <source src="{% static 'tasks/media/background.mp4' %}" type="video/mp4">
       </video>
     <div class="container">
-        <div style="text-align: center;">
-            <h3 class="animate-charcter">Cyber Club, Sri Sairam Institutions</h3>
+        <div style="text-align: center; padding: 6%;">
+            <h1 class="animate-charcter">Sri Sairam Institute of Technology</h1>
         </div>
     </div>
-    <h1>
-        Task 3 
-    </h1>
+
+    <div class="container" style="
+    background-image: linear-gradient(to bottom right, rgb(0, 255, 119), rgb(161, 48, 161)); 
+    opacity: 0.9; 
+    border-radius: 10px;
+    border: 10px ridge rgb(0, 225, 255);
+    ">
+        <h1>
+            <u>
+                QRMania
+            </u>
+        </h1>
+
+        <!-- qr code, upload qr code in insta, github, etc 
+        qr code scan pana decimal or hex la irkanum
+        adha convert pannanum
+        oru ans ku nerya qr code use use pananum
+        5ques in this format
+    
+        or orey qr code , andha pic a part part a cut panni 
+        oru oru place la vaikanumm .. idu mass a irukum
+        aprm avanga kandu pudicha yella code a yum onna join panitu adha scan pannanum 
+        (Indha idea dha ippo implement pani irukkan)
+    
+        if ans correct, congo popup
+        else 3 tries .. if exceeded, task closed (Block using IP)
+        (idhu pannala avaga paavom laaa :[ )
+    
+        insta 
+        github 
+        facebook 
+        reddit  
+        reddit vena adukku badhila twitter
+
+        indha comments a alaikka vena apo achhu kandu pudikuragala nu papommmmm 
+    -->
+        <h3 style="color: darkblue;">
+        Now we got some details from attacker 
+        <span style="font-family: monospace; font-size: 25px; background-color: grey; text-decoration: none;">
+            <a href="github.com/thewachdog/l4dyjd">
+                more details here 
+            </a>
+        </span>
+        <br>
+        But still we need to find what are they planning ... 
+        </h3>
+        <h2>
+            Hints :
+        </h2>
+        <ul style="font-size: larger;">
+            <li style="color: rgb(255, 123, 0);">
+                The answer will be a 4 word.
+            </li>
+            <li style="color: rgb(140, 0, 255);">
+                A QR code is split into 4 pieces and the parts of it are hidden across the Internet.
+            </li>
+            <li style="color: rgb(217, 255, 0);">
+                Your task is to find all 4 parts of QR code and scan it.
+            </li>
+            <li style="color: rgb(0, 174, 255);">
+                After scanning, it will return a 10 word sentence
+            </li>
+            <li style="color: rgb(255, 0, 128);">
+                Then you have to find the 4 word sequence which matches the string pattern (as mentioned in input box with '*')
+            </li>
+            <li>
+                NOTE: The answer will and must form a pattern
+            </li>
+        </ul>
+
+        <form action="encoded.html" method="post">
+            <div class="input-group mb-3">
+                <input type="charValues" class="form-control" placeholder="*** **** ** **" id="answer" name="answer">    
+                {% csrf_token %}
+                <button class="btn btn-info" type="submit" id="button-addon2 ansButton">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    {% if message %}
+        <script>alert('{{ message }}');</script>
+    {% endif %}
+
+    <footer style="background-color: #0f0; color: #000; font-size: 20px; opacity: 0.7;">
+        This website is done by 
+        <a href="http://instagram.com/thewachdog" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #f00; font-weight: 900;">
+            Bharath V
+        </a>
+        and 
+        <a href="http://instagram.com/darkness_.over._ruled" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: hotpink; font-weight: 900;">
+            Hareash S 
+        </a>
+    </footer>
 
 
-
-    qr code, upload qr code in insta, github, etc 
-    qr code scan pana decimal or hex la irkanum
-    adha convert pannanum
-    oru ans ku nerya qr code use use pananum
-    5ques in this format
-
-    or orey qr code , andha pic a part part a cut panni 
-    oru oru place la vaikanumm .. idu mass a irukum
-    aprm avanga kandu pudicha yella code a yum onna join panitu adha scan pannanum 
-
-    if ans correct, congo popup
-    else 3 tries .. if exceeded, task closed (Block using IP)
-
-    insta 
-    github 
-    facebook 
-    reddit 
-
-    <form action="encoded.html" method="post">
-        {% csrf_token %}
-        <button class="btn btn-info" type="submit" id="button-addon2 ansButton">Submit</button>
-    </form>
-</body>
+<!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>

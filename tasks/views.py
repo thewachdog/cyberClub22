@@ -17,11 +17,9 @@ def index(request):
 def osint(request):
 		if request.POST:
 			val = request.POST['answer']
-			# print(val)
 			if val.lower() == 'captain vikram batra':
 				return render(request, "task4.html", {})
 			else:
-				# messages.info(request, 'Your password has been changed successfully!')
 				message = {'message' : 'Wrong answer, Try again.'}
 				return render(request, 'task3.html', message)
 		else:
@@ -29,7 +27,12 @@ def osint(request):
 
 def encoded(request):
 	if request.POST:
-		return render(request, "task3.html", {})
+		val = request.POST['answer']
+		if val.lower() == 'the game is on':
+			return render(request, "task3.html", {})
+		else:
+			message = {'message' : 'Wrong answer, Try again.'}
+			return render(request, 'task2.html', message)
 	else:
 		return render(request, "404.html", {})
 
@@ -49,7 +52,6 @@ def QRMania(request):
 def warmup(request):
 	return render(request, 'task0.html', {})
 
-
 def EazyPeazy(request):
 	return render(request, 'task1.html', {})
 
@@ -61,4 +63,7 @@ def sample3(request):
 	return render(request, 'sample3.html', {})
 
 def congratulations(request):
-	return render(request, 'congratulations.html', {})
+	if request.POST:
+		return render(request, 'congratulations.html', {})
+	else:
+		return render(request, "404.html", {})
