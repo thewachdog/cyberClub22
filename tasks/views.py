@@ -28,7 +28,7 @@ def osint(request):
 def encoded(request):
 	if request.POST:
 		val = request.POST['answer']
-		if val.lower() == 'the game is on':
+		if val.lower() == 'the game is up':
 			return render(request, "task3.html", {})
 		else:
 			message = {'message' : 'Wrong answer, Try again.'}
