@@ -24,7 +24,7 @@ SECRET_KEY = ')48v$_fnfln8(=8y*c!^fsb&8)hfuawdpr4_i45-=fukwbhci$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
-DEBUG_PROPAGATE_EXCEPTIONS = True
+# DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -130,6 +130,7 @@ STATICFILES_DIRS = (
 )
 STATICFILES_STORAGE = 'whitenoise.django.GzipStaticFilesStorage'
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
