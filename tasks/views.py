@@ -53,7 +53,10 @@ def warmup(request):
 	return render(request, 'task0.html', {})
 
 def EazyPeazy(request):
-	return render(request, 'task1.html', {})
+	if request.POST:
+		return render(request, 'task1.html', {})
+	else:
+		return render(request, '404.html', {})
 
 def sample1(request):
 	return render(request, 'sample1.html', {})
